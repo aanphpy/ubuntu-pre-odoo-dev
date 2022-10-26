@@ -1,5 +1,4 @@
-# ubuntu-pre-odoo-dev
-Ubuntu 22.04 Pre Odoo Dev
+# Ubuntu 22.04 Pre Odoo Dev
 
 Anda bisa mendownload `init_install.sh` jika diasumsikan belum menginstall `git`
 
