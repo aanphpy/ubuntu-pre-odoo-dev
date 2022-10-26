@@ -85,3 +85,40 @@ pip install -r requirements.txt
 pip install "Werkzeug<1"
 pip install "libsass<1"
 ```
+
+PostgresSQL Untuk Odoo 12 versi maksimumnya adalah PostgreSQL versi 12. File `init_install.sh` sudah menyiapkan docker container dengan nama `postgres10`:
+
+```sh
+docker stop postgres10
+docker start postgres10
+docker exec -it postgres10 bash
+```
+
+Setelah masuk di dalam CLI docker container `postgres10`:
+
+```sh
+apt update
+apt install nano
+nano /var/lib/postgresql/data/pgdata/pg_hba.conf
+```
+
+Di `nano` cari line:
+```sh
+local       all     all     trust
+```
+Replace dengan:
+```sh
+local       all     all     md5
+```
+Keluar dari docker container `postgres10`:
+```
+exit
+```
+Restart docker container `postgres10` dan buat user `admin` dengan password disesuaikan dengan configurasi `db_password` di `$HOME/Projects/odoo/odoo12/odoo.conf`:
+```sh
+docker stop postgres10
+docker start postgres10
+docker exec -it postgres10 bash
+su - postgres
+createuser -P -s -e admin
+```
