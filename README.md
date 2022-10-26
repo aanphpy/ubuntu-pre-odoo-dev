@@ -34,7 +34,6 @@ Plugins:
 - Pylance by Microsoft
 - Docker by Microsoft
 - IntelliCode by Microsoft
-- XML by Red Hat
 
 Themes:
 - VSC Military Style
