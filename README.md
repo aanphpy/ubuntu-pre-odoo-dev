@@ -1,10 +1,14 @@
 # ubuntu-pre-odoo-dev
-Ubuntu Pre Odoo Dev
-Prosedur dibawah ini dijalankan setelag menjalankan script `init_install.sh` dari repo ini:
+Ubuntu 22.04 Pre Odoo Dev
+
+Anda bisa mendownload `init_install.sh` jika diasumsikan belum menginstall `git`
 
 ```sh
-$ ./init_install.sh
+chmod u+x init_install.sh
+./init_install.sh
 ```
+
+Prosedur dibawah ini dijalankan setelah menjalankan script `init_install.sh`:
 
 # Install Docker Desktop
 
@@ -48,7 +52,7 @@ nano /etc/postgresql/14/main/pg_hba.conf
 Cari: `local   all             all                                peer`
 ubah ke:  `local   all             all                                md5`
 
-Untuk configurasi dibawah ini, password admin sesuaikan 
+Untuk configurasi dibawah ini, password `admin` sesuaikan 
 dengan konfigurasi `db_password` yang ada di file 
 `$HOME/Projects/odoo/odoo14/odoo.conf`
 
